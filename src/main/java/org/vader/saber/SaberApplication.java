@@ -10,5 +10,4 @@ public class SaberApplication {
 
         SpringApplication.run(SaberApplication.class, args);
     }
-
 }
