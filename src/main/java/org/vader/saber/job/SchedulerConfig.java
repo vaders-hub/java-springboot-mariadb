@@ -16,20 +16,20 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableScheduling
 public class SchedulerConfig {
 
-    @Autowired
-    JobLauncher jobLauncher;
-
-    @Autowired
-    Job job;
-
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
-
-    @Scheduled(fixedDelay = 5000, initialDelay = 5000)
-    public void scheduleByFixedRate() throws Exception {
-        System.out.println("Batch job starting");
-        JobParameters jobParameters = new JobParametersBuilder()
-                .addString("time", format.format(Calendar.getInstance().getTime())).toJobParameters();
-        jobLauncher.run(job, jobParameters);
-        System.out.println("Batch job executed successfullyn");
-    }
+//    @Autowired
+//    JobLauncher jobLauncher;
+//
+//    @Autowired
+//    Job job;
+//
+//    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+//
+//    @Scheduled(fixedDelay = 5000, initialDelay = 5000)
+//    public void scheduleByFixedRate() throws Exception {
+//        System.out.println("Batch job starting");
+//        JobParameters jobParameters = new JobParametersBuilder()
+//                .addString("time", format.format(Calendar.getInstance().getTime())).toJobParameters();
+//        jobLauncher.run(job, jobParameters);
+//        System.out.println("Batch job executed successfullyn");
+//    }
 }
