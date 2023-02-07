@@ -20,7 +20,7 @@ public class GuestbookServiceTests {
 
     @Test
     public void insertDummies() {
-        IntStream.rangeClosed(1, 20).forEach(i -> {
+        IntStream.rangeClosed(1, 300).forEach(i -> {
 
             Guestbook guestbook = Guestbook.builder()
                     .title("title...." + i)
@@ -48,8 +48,14 @@ public class GuestbookServiceTests {
         PageRequestDTO pageRequestDTO = PageRequestDTO.builder().page(1).size(10).build();
         PageResultDTO<GuestbookDTO, Guestbook> resultDTO = service.getList(pageRequestDTO);
 
+        System.out.println("PREV: " + resultDTO.isPrev());
+        System.out.println("NEXT: " + resultDTO.isNext());
+        System.out.println("TOTAL: " + resultDTO.getTotalPage());
+
         for (GuestbookDTO guestbookDTO : resultDTO.getDtoList()) {
             System.out.println("guestbookDTO >>>>" + guestbookDTO);
         }
+        
+        resultDTO.getPageList().forEach(i -> System.out.println("Page List >>>>" + i));
     }
 }
