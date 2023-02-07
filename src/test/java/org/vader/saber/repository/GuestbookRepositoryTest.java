@@ -3,7 +3,7 @@ package org.vader.saber.repository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.vader.saber.entity.GuestBook;
+import org.vader.saber.entity.Guestbook;
 
 import java.util.stream.IntStream;
 
@@ -14,13 +14,13 @@ public class GuestbookRepositoryTest {
 
     @Test
     public void insertDummies() {
-//        IntStream.rangeClosed(1, 300).forEach(i -> {
-//            GuestBook guestbook = GuestBook.builder()
-//                    .title("Title..." + i)
-//                    .content("Content..." + i)
-//                    .writer("user" + (i % 10))
-//                    .build();
-//            System.out.println(guestbookRepository.save(guestbook));
-//        });
+        IntStream.rangeClosed(1, 300).forEach(i -> {
+            Guestbook guestbook = org.vader.saber.entity.Guestbook.builder()
+                    .title("Title..." + i)
+                    .content("Content..." + i)
+                    .writer("user" + (i % 10))
+                    .build();
+            System.out.println(guestbookRepository.save(guestbook));
+        });
     }
 }
