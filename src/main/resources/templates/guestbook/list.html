@@ -6,5 +6,13 @@
 </head>
 <body>
 <div>list page</div>
+<div>
+    <ul th:each="dto: ${result.dtoList}">
+        <li>[[${dto.gno}]]</li>
+        <li>[[${dto.title}]]</li>
+        <li>[[${dto.writer}]]</li>
+        <li>[[${#temporals.format(dto.regDate, 'yyyy/MM/dd')}]]</li>
+    </ul>
+</div>
 </body>
 </html>

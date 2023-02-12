@@ -29,5 +29,6 @@ public class GuestbookController {
         log.info("list >>>> " + pageRequestDTO);
 
         model.addAttribute("result", service.getList(pageRequestDTO));
+
     }
 }

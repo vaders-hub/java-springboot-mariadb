@@ -22,6 +22,7 @@ public class PageRequestDTO {
     }
 
     public Pageable getpageable(Sort sort) {
+
         return PageRequest.of(page - 1, size, sort);
     }
 }
