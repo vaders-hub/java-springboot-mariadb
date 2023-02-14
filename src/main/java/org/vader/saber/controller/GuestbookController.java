@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.vader.saber.dto.GuestbookDTO;
 import org.vader.saber.dto.PageRequestDTO;
 import org.vader.saber.service.GuestbookService;
 
@@ -30,5 +32,13 @@ public class GuestbookController {
 
         model.addAttribute("result", service.getList(pageRequestDTO));
 
+    }
+
+    public String registerPost(GuestbookDTO dto, RedirectAttributes redirectAttributes) {
+     Long gno = service.register(dto);
+
+     redirectAttributes.addFlashAttribute("msg", gno);
+
+     return "redirect:/guestbook/list";
     }
 }
