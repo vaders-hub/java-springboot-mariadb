@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/guestbook/register}" th:method="post">
+        <input type="text" name="title"/>
+        <input type="text" name="content"/>
+        <input type="text" name="writer"/>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
